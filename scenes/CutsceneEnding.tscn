@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://df78ending01"]
+
+[ext_resource type="Script" uid="uid://bqwh6ulqqogx3" path="res://scripts/CutsceneEnding.gd" id="1_ending"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_story"]
+line_spacing = 4.0
+font_size = 8
+
+[node name="CutsceneEnding" type="Control" unique_id=1834530511]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ending")
+
+[node name="Background" type="ColorRect" parent="." unique_id=27982986]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18, 0.18, 0.18, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1599039056]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 10
+
+[node name="StoryLabel" type="Label" parent="MarginContainer" unique_id=1196626664]
+layout_mode = 2
+size_flags_vertical = 1
+text = "im blue da be do da be di"
+label_settings = SubResource("LabelSettings_story")
+autowrap_mode = 3
+
+[node name="PlayAgainButton" type="Button" parent="." unique_id=1095466476]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -46.0
+offset_top = -32.0
+offset_right = 46.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 9
+text = "Play Again"

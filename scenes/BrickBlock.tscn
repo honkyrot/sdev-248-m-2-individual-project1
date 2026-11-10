@@ -1,0 +1,32 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/BrickBlock.gd" id="1_bbscript"]
+[ext_resource type="Texture2D" path="res://assets/tileset.png" id="2_tiles"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_solid"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sensor"]
+size = Vector2(14, 4)
+
+[node name="BrickBlock" type="StaticBody2D"]
+collision_layer = 1
+collision_mask = 2
+script = ExtResource("1_bbscript")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tiles")
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_solid")
+
+[node name="BottomArea" type="Area2D" parent="."]
+position = Vector2(0, 8)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomArea"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_sensor")

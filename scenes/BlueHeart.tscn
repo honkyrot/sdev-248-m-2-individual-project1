@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://k4rjc3a7swhm"]
+
+[ext_resource type="Script" uid="uid://c82ffarn8mwxi" path="res://scripts/Enemy.gd" id="1_q1p64"]
+[ext_resource type="Texture2D" uid="uid://b31i2ij58lyrn" path="res://assets/blue_heart.png" id="2_q1p64"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_solid"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stomp"]
+size = Vector2(12, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
+size = Vector2(14, 8)
+
+[node name="BlueHeart" type="CharacterBody2D" unique_id=609133524 groups=["enemies"]]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_q1p64")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1881006277]
+texture = ExtResource("2_q1p64")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=747814623]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_solid")
+
+[node name="StompArea" type="Area2D" parent="." unique_id=2038517822]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompArea" unique_id=291643313]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_stomp")
+
+[node name="BodyArea" type="Area2D" parent="." unique_id=1661543784]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyArea" unique_id=1349964429]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_body")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1251635256]
+position = Vector2(-47, 45)
+rect = Rect2(-30, -30, 60, 60)

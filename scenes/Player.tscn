@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_ply"]
+[ext_resource type="Texture2D" path="res://assets/player.png" id="2_plytex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ply"]
+size = Vector2(10, 15)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_ply")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_plytex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ply")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(40, -20)
+limit_left = 0
+limit_top = -40
+limit_bottom = 240
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0

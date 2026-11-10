@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://vfi0vkq6u3j4"]
+
+[ext_resource type="Script" uid="uid://dim1eaoctbogg" path="res://scripts/HeartBlock.gd" id="1_qbscript"]
+[ext_resource type="Texture2D" uid="uid://djha66vacdxpj" path="res://assets/tileset.png" id="2_tiles"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_solid"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sensor"]
+size = Vector2(14, 4)
+
+[node name="HeartBlock" type="StaticBody2D" unique_id=1159131854]
+collision_mask = 2
+script = ExtResource("1_qbscript")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1198380505]
+texture = ExtResource("2_tiles")
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1955551379]
+shape = SubResource("RectangleShape2D_solid")
+
+[node name="BottomArea" type="Area2D" parent="." unique_id=1380660963]
+position = Vector2(0, 8)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomArea" unique_id=1538095701]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_sensor")

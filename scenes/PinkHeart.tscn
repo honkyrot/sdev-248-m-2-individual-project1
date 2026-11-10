@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cjykbk36u43vo"]
+
+[ext_resource type="Script" uid="uid://bouwxms5l46i4" path="res://scripts/PinkHeart.gd" id="1_pink"]
+[ext_resource type="Texture2D" uid="uid://2v13rdbacxxv" path="res://assets/pink_heart.png" id="2_ptex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
+size = Vector2(12, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pickup"]
+radius = 8.0
+
+[node name="PinkHeart" type="CharacterBody2D" unique_id=1132998656 groups=["powerups"]]
+collision_layer = 0
+script = ExtResource("1_pink")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=663622388]
+texture = ExtResource("2_ptex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1006872519]
+shape = SubResource("RectangleShape2D_body")
+
+[node name="PickupArea" type="Area2D" parent="." unique_id=2012055917]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea" unique_id=1963332488]
+shape = SubResource("CircleShape2D_pickup")
